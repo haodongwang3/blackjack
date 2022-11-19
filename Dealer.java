@@ -7,17 +7,22 @@ public class Dealer extends Player{
 	public Dealer(String name) {
 		super(name);
 	}
-	
-	public void loadJokes() throws Exception {
-		File jokeFile = new File("C:\\VPCI\\GR 10\\ICS3U7_Sem1\\november_2022\\blackjakc\\playerJokes.txt");
-		Scanner sc = new Scanner(jokeFile);
-		while (sc.hasNextLine()) {
-			jokes.add(sc.nextLine());
+	/*
+	public void loadJokes(){
+		try {
+			File jokeFile = new File("C:\\VPCI\\GR 10\\ICS3U7_Sem1\\november_2022\\blackjakc\\playerJokes.txt");
+			Scanner sc = new Scanner(jokeFile);
+			while (sc.hasNextLine()) {
+				jokes.add(sc.nextLine());
+			}
+			sc.close();
 		}
-		sc.close();
+		catch (Exception e) {
+			System.out.print("error");
+		}
 	}
 	
-	/* include polymorphism for jokes for if dealer wins
+	 include polymorphism for jokes for if dealer wins
 	*
 	*
 	*

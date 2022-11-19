@@ -24,13 +24,18 @@ public class Player extends BlackJack{
 		return this.cards;
 	}
 	
-	public void loadJokes() throws Exception {
-		File jokeFile = new File("C:\\VPCI\\GR 10\\ICS3U7_Sem1\\november_2022\\blackjakc\\playerJokes.txt");
-		Scanner sc = new Scanner(jokeFile);
-		while (sc.hasNextLine()) {
-			jokes.add(sc.nextLine());
+	public void loadJokes(String fileName) {
+		try {
+			File jokeFile = new File(fileName);
+			Scanner sc = new Scanner(jokeFile);
+			while (sc.hasNextLine()) {
+				jokes.add(sc.nextLine());
+			}
+			sc.close();
 		}
-		sc.close();
+		catch (Exception e){
+			System.out.print("error");
+		}
 	}
 	
 	public String nextJoke() {
@@ -40,7 +45,9 @@ public class Player extends BlackJack{
 	}
 	
 	public void hit() {
-		this.cards.add(deck.toString(deck.getCard()));
+		int card = deck.getCard();
+		this.cards.add(deck.toString(card));
+		this.sum += deck.getValue(card);
 	}
 	
 	

@@ -21,6 +21,11 @@ public class Deck {
 			arr[i] = temp;
 		}
 	}
+	//end of deck creation
+	
+	public int[] getDeck() {
+		return this.deck;
+	}
 
 	public String toString(int num) {
 		int suit = num/13;
@@ -113,9 +118,6 @@ public class Deck {
 			newDeck[i-1] = deck[i];
 		}
 		deck = newDeck;
-		for (int i=0;i<deck.length;i++) {
-			System.out.print(deck[i] + " ");
-		}
 		return card;
 	}
 }
